@@ -5,8 +5,8 @@ const app = angular.module('Auth', ['ngRoute']);
 app.config(($routeProvider)=>{
 	$routeProvider
 	.when('/', {
-		templateUrl: 'partials/user.html',
-		controller: 'userCtrl'
+		templateUrl: 'partials/show-data.html',
+		controller: 'dataCtrl'
 	})
 	.otherwise('/');
 
