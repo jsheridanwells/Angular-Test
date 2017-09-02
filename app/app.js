@@ -1,3 +1,5 @@
+'use strict';
+
 const app = angular.module('Auth', ['ngRoute']);
 
 app.config(($routeProvider)=>{
@@ -8,12 +10,14 @@ app.config(($routeProvider)=>{
 	})
 	.otherwise('/');
 
-	app.run(($location, FBCreds) => {
-		let authConfig = {
-			apiKey: FBCreds.apiKey,
-		    authDomain: FBCreds.authDomain,
-		    databaseURL: FBCreds.databaseURL
-		}
-		firebase.initializeApp(authConfig);
-	});
+});
+
+app.run(($location, FBCreds) => {
+	console.log("FB Creds", FBCreds);
+	let authConfig = {
+		apiKey: FBCreds.apiKey,
+	    authDomain: FBCreds.authDomain,
+	    databaseURL: FBCreds.databaseURL
+	}
+	firebase.initializeApp(authConfig);
 });

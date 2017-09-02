@@ -1,13 +1,13 @@
 <div>
 	<p>Login or Register</p>
 	<div>
-		Email: <input type="email">
+		Email: <input type="email" ng-model="account.email" value="jeremyswells@yahoo.com.br">
 	</div>
 	<div>
-		Password: <input type="password">
+		Password: <input type="password" ng-model="account.password" value="password">
 	</div>
 	<div>
-		<button>Register</button>
-		<button>Login</button>
+		<button ng-click="register()">Register</button>
+		<button ng-click="logIn()">Login</button>
 	</div>
 </div>
