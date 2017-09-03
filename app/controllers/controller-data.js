@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('dataCtrl', function($scope, dataFactory){
-	$scope.myData;
+	$scope.myData = {};
 
 	const showData = function() {
 		console.log("showData is firing");

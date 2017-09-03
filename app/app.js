@@ -2,10 +2,12 @@
 
 const app = angular.module('Auth', ['ngRoute']);
 
+//provide user authentication check here
+
 app.config(($routeProvider)=>{
 	$routeProvider
 	.when('/', {
-		templateUrl: 'partials/show-data.html',
+		templateUrl: 'partials/user.html',
 		controller: 'dataCtrl'
 	})
 	.otherwise('/');
@@ -18,6 +20,6 @@ app.run(($location, FBCreds) => {
 		apiKey: FBCreds.apiKey,
 	    authDomain: FBCreds.authDomain,
 	    databaseURL: FBCreds.databaseURL
-	}
+	};
 	firebase.initializeApp(authConfig);
 });
