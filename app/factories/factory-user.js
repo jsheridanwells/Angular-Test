@@ -5,7 +5,7 @@ app.factory('userFactory', function ($q, $http) {
 
 	const isAuthenticated = function() {
 		return new Promise((resolve, reject) => {
-			firebase.auth().onAuthStateChange((user) => {
+			firebase.auth().onAuthStateChanged((user) => {
 				if (user) {
 					currentUser = user.uid;
 					resolve(true);
