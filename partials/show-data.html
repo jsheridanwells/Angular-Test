@@ -1,3 +1,9 @@
+<div>
+	<div>Add Mushroom Name: <input type="text" ng-model="newItem.name"></div>
+	<div>Add Mushroom Description: <input type="text" ng-model="newItem.description"></div>
+	<div><button ng-click="addItem()">Add</button></div>
+</div>
+
 <ul ng-repeat="item in myData">
-	<li>{{item.name}}: {{item.description}}</li>
+	<li>{{item.name}}: {{item.description}} <button ng-click="deleteItem(item)" >Delete</button> </li>
 </ul>
