@@ -3,12 +3,17 @@
 const app = angular.module('Auth', ['ngRoute']);
 
 //provide user authentication check here
+let isAuth = (userFactory) => {userFactory.isAuthenticated();};
 
 app.config(($routeProvider)=>{
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/user.html',
-		controller: 'dataCtrl'
+		controller: 'userCtrl'
+	}).when('/data-list', {
+		templateUrl: 'partials/show-data.html',
+		controller: 'dataCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 

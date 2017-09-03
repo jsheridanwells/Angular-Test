@@ -25,7 +25,7 @@ app.controller('userCtrl', function($scope, $window, $location, userFactory){
 		console.log("login firing");
 		userFactory.logIn($scope.account)
 		.then(()=>{
-			$window.location.href = '#!/view-data';
+			$window.location.href = '#!/data-list';
 		});
 	};
 
